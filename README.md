@@ -1,6 +1,5 @@
 # TaskFlow - Task Management Application (Frontend)
 
-## Short Description
 TaskFlow is a modern, responsive task management application that allows users to create, edit, delete, and reorder tasks across three categories: **To-Do**, **In Progress**, and **Done**. The app features a clean and minimalistic UI, drag-and-drop functionality, and real-time updates. It is built using **Vite + React** for the frontend and integrates with a backend API for task persistence.
 
 ---
@@ -65,6 +64,39 @@ http://localhost:5000
 - If you encounter any issues, refer to the project's GitHub repository for further guidance.
 
 
+## Technologies Used
+The following technologies were used to build this project:
+
+### Frontend
+- **React**: For building the user interface.
+- **Vite**: For fast development and bundling.
+- **Tailwind CSS**: For styling the application.
+- **@dnd-kit**: For drag-and-drop functionality.
+- **axios**: For making HTTP requests to the backend API.
+- **Firebase Authentication**: For user authentication (Google Sign-In).
+
+## Features
+
+### Task Management:
+- Add, edit, and delete tasks.
+- Drag-and-drop tasks to reorder them within a category or move them between categories.
+
+### Real-Time Updates:
+- Changes are instantly saved to the database and reflected in the UI.
+
+### Responsive Design:
+- Works seamlessly on both desktop and mobile devices.
+
+### User Authentication:
+- Secure login using Firebase Authentication (Google Sign-In).
+
+## Contributing
+Contributions are welcome! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push to the branch.
+4. Submit a pull request.
 
 
 
