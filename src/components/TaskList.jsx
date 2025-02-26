@@ -11,6 +11,7 @@ import {
   useSensors,
   DragOverlay,
   defaultDropAnimation,
+  TouchSensor,
 } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -42,12 +43,13 @@ const TaskList = () => {
   const handleDragStart = (event) => {
     const { active } = event;
     setActiveTask(tasks.find((task) => task._id === active.id));
+    document.body.classList.add("dragging");
   };
 
   // Handle drag end
   const handleDragEnd = async (event) => {
     const { active, over } = event;
-
+    document.body.classList.remove("dragging");
     if (!over) return;
 
     if (active.id !== over.id) {
@@ -102,7 +104,13 @@ const TaskList = () => {
   // Sensors for drag-and-drop
   const sensors = useSensors(
     useSensor(PointerSensor),
-    useSensor(KeyboardSensor)
+    useSensor(KeyboardSensor),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250, // Delay before dragging starts (in milliseconds)
+        tolerance: 5, // Tolerance for touch movements (in pixels)
+      },
+    }),
   );
 
   // Group tasks by category
